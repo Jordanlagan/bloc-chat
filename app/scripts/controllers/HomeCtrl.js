@@ -3,7 +3,7 @@
         this.rooms = Room.all;
 
         this.addRoom = function() {
-            var modalInstance = $uibModal.open({
+            $uibModal.open({
               ariaLabelledBy: 'modal-title',
               ariaDescribedBy: 'modal-body',
               templateUrl: '/templates/myModalContent.html',

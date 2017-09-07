@@ -1,6 +1,15 @@
-<section ng-repeat="rooms in home.rooms">
-    <div>Room {{ home.rooms[$index].$id }}</div>
-</section>
-<section ng-controller="ModalCtrl as modal">
-    <button ng-click="modal.open()">Create New Room</button>
-</section>
+<main class="home">
+    <h1>Bloc Chat</h1>
+    <hr>
+    <section>
+        <button ng-click="home.addRoom()">Create New Room</button>
+    </section>
+    <br>
+    <section>
+        <ol>
+            <div ng-repeat="rooms in home.rooms">
+                    <li>{{ home.rooms[$index].$value }}</li>
+            </div>
+        </ol>
+    </section>
+</main>
