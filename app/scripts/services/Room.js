@@ -6,6 +6,8 @@
 
         Room.all = rooms;
 
+        Room.activeRoom = 'hi';
+
         /** addRoom
         * @function addRoom
         * @desc Creates a new chat room in the database

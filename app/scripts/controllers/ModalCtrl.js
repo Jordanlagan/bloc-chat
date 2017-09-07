@@ -9,7 +9,7 @@
             $uibModalInstance.dismiss();
         }
         this.submit = function() {
-            Room.addRoom(this.newRoom.name);
+            Room.addRoom(this.newRoom);
             $uibModalInstance.close();
         }
     }

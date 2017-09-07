@@ -1,5 +1,41 @@
-.home {
-    margin: 15px;
+.list {
+    padding: 55px;
+    padding-top: 20px;
     font-family: 'Libre Baskerville', serif;
     font-size: 20px;
+    width: 25%;
+    float: left;
+    height: 100vh;
+    background: #EFEFEF
+}
+
+a {
+    cursor: pointer;
+}
+
+.room {
+    width: 72%;
+    float: left;
+    margin: 15px;
+    padding: 15px;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.message {
+    margin: 5px;
+    padding: 5px;
+    background: #EFDFFF;
+    border-radius: 5px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.sent-at {
+    font-style: italic;
+}
+
+.message-content {
+    padding-top: 5px;
 }

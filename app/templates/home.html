@@ -1,4 +1,4 @@
-<main class="home">
+<main class="list">
     <h1>Bloc Chat</h1>
     <hr>
     <section>
@@ -6,10 +6,18 @@
     </section>
     <br>
     <section>
-        <ol>
+        <ul>
             <div ng-repeat="rooms in home.rooms">
-                    <li>{{ home.rooms[$index].$value }}</li>
+                <a ng-click="home.changeRoom(rooms)"><li>{{ rooms.$value }}</li></a>
             </div>
-        </ol>
+        </ul>
     </section>
 </main>
+<section class="room">
+    <h2>{{ home.activeRoom.$value }}</h2>
+    <div class="message" ng-repeat="messages in home.messages">
+        <p class="username" style="display: inline">{{ messages.username }}</p>
+        <p class="sent-at" style="display: inline">{{ messages.sentAt }}</p>
+        <p class="message-content">{{ messages.content }}</p>
+    </div>
+</section>
