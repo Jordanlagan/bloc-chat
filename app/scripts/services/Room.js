@@ -6,6 +6,18 @@
 
         Room.all = rooms;
 
+        /** addRoom
+        * @function addRoom
+        * @desc Creates a new chat room in the database
+        * @param {Object} room
+        */
+        Room.addRoom = function(room) {
+            rooms.$add(room).then(function(ref) {
+                var id = ref.key;
+                console.log("added record with id " + id);
+            });
+        };
+
         return Room;
     }
 

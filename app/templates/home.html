@@ -1,3 +1,6 @@
 <section ng-repeat="rooms in home.rooms">
     <div>Room {{ home.rooms[$index].$id }}</div>
 </section>
+<section ng-controller="ModalCtrl as modal">
+    <button ng-click="modal.open()">Create New Room</button>
+</section>
