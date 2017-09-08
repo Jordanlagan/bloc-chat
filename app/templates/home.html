@@ -15,7 +15,8 @@
 </main>
 <section class="room">
     <h2 class="current-room">{{ home.activeRoom.$value }}</h2>
-    <h3 class="current-user">Welcome {{ home.username }}</h3>
+    <h2 class="current-room" ng-show="!home.activeRoom.$value">Select a room</h2>
+    <h3 class="current-user">Welcome back {{ home.username }}</h3>
     <hr>
     <div class="message" ng-repeat="messages in home.messages">
         <p class="username" style="display: inline">{{ messages.username }}</p>
