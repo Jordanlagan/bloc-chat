@@ -5,7 +5,7 @@
             name: "New Room"
         };
 
-        this.username = "Your Username";
+        this.username = null;
 
         this.close = function() {
             $uibModalInstance.dismiss();
