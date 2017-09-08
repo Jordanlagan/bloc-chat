@@ -15,6 +15,7 @@
             $uibModalInstance.close();
         }
         this.createUser = function() {
+            $cookies.put('blocChatCurrentUser', this.username);
             var currentUser = $cookies.get('blocChatCurrentUser');
             if (!currentUser || currentUser === '') {
                 $uibModal.open({
