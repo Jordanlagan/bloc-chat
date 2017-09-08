@@ -14,7 +14,9 @@
     </section>
 </main>
 <section class="room">
-    <h2>{{ home.activeRoom.$value }}</h2>
+    <h2 class="current-room">{{ home.activeRoom.$value }}</h2>
+    <h3 class="current-user">Welcome {{ home.username }}</h3>
+    <hr>
     <div class="message" ng-repeat="messages in home.messages">
         <p class="username" style="display: inline">{{ messages.username }}</p>
         <p class="sent-at" style="display: inline">{{ messages.sentAt }}</p>

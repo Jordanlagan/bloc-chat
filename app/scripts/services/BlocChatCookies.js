@@ -8,6 +8,8 @@
                 templateUrl: '/templates/setUserNameModal.html',
                 size: 'sm',
                 controller: 'ModalCtrl as modal',
+                backdrop: 'static',
+                keyboard: false
             });
         }
     }

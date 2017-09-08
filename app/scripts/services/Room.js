@@ -6,7 +6,7 @@
 
         Room.all = rooms;
 
-        Room.activeRoom = 'hi';
+        Room.activeRoom = null;
 
         /** addRoom
         * @function addRoom

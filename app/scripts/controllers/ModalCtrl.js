@@ -15,22 +15,10 @@
             $uibModalInstance.close();
         }
         this.createUser = function() {
+            console.log('Username set to '+this.username);
             $cookies.put('blocChatCurrentUser', this.username);
-            var currentUser = $cookies.get('blocChatCurrentUser');
-            if (!currentUser || currentUser === '') {
-                $uibModal.open({
-                    ariaLabelledBy: 'modal-title',
-                    ariaDescribedBy: 'modal-body',
-                    templateUrl: '/templates/setUserNameModal.html',
-                    size: 'sm',
-                    controller: 'ModalCtrl as modal',
-                });
-            } else {
-                console.log('Username set to '+this.username);
-                $cookies.put('blocChatCurrentUser', this.username);
-                console.log('blocChatCurrentUser cookie successfully set to '+$cookies.get('blocChatCurrentUser'));
-                $uibModalInstance.close();
-            }
+            console.log('blocChatCurrentUser cookie successfully set to '+$cookies.get('blocChatCurrentUser'));
+            $uibModalInstance.close();
         }
     }
 

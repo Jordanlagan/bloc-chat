@@ -39,3 +39,17 @@ a {
 .message-content {
     padding-top: 5px;
 }
+
+.current-user {
+    text-align: right;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}
+
+.current-room {
+    text-align: left;
+    position: relative;
+    left: 15px;
+    top: -10px;
+}
