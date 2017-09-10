@@ -5,9 +5,11 @@
 
         this.getByRoomId = Message.getByRoomId;
 
-        this.username = Username.username;
+        this.username = Username.update();
 
         this.activeRoom = Room.activeRoom;
+
+        this.message = "";
 
         this.addRoom = function() {
             $uibModal.open({
@@ -26,6 +28,17 @@
 
         this.changeUser = function(name) {
             this.username = name;
+        }
+
+        this.sendMessage = function(message) {
+
+            var newMessage = {
+                content: message,
+                roomId: this.activeRoom.$id,
+                sentAt: new Date().toLocaleTimeString(),
+                username: Username.update()
+            };
+            Message.send(newMessage);
         }
     }
 

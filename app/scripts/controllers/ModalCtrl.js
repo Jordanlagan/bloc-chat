@@ -11,7 +11,7 @@
             $uibModalInstance.dismiss();
         }
         this.submit = function() {
-            Room.addRoom(this.newRoom);
+            Room.addRoom(this.newRoom.name);
             $uibModalInstance.close();
         }
         this.createUser = function() {

@@ -6,6 +6,7 @@
 
         Username.update = function() {
             Username.username = $cookies.get('blocChatCurrentUser');
+            return Username.username;
         }
         return Username;
     }
