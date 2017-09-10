@@ -12,6 +12,10 @@
             </div>
         </ul>
     </section>
+    <section class="disconnect-change">
+        <button ng-click="home.logout(home.username)">Disconnect</button>
+        <button ng-click="home.changeUser(home.username)">Change Username</button>
+    </section>
 </main>
 <section class="room">
     <h2 class="current-room">{{ home.activeRoom.$value }}</h2>
@@ -28,5 +32,11 @@
           <input type="text" ng-model="home.message" name="text" />
           <input type="submit" id="submit" value="Submit" />
         </form>
+    </div>
+</section>
+<section class="online-users">
+    <h2 class="current-room">Online Users:</h2>
+    <div ng-repeat="users in home.activeUsers">
+        <p>{{users.$value}}</p>
     </div>
 </section>

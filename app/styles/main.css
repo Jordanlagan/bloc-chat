@@ -14,11 +14,24 @@ a {
 }
 
 .room {
-    width: 72%;
+    width: 55%;
     float: left;
     margin: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
     padding: 15px;
     font-family: 'Libre Baskerville', serif;
+}
+
+.online-users {
+    padding: 55px;
+    padding-top: 20px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 20px;
+    width: 20%;
+    float: left;
+    height: 100vh;
+    background: #EFEFEF
 }
 
 .message {

@@ -1,5 +1,5 @@
 (function() {
-    function ModalCtrl(Room, $uibModalInstance, $uibModal, $cookies) {
+    function ModalCtrl(Room, $uibModalInstance, $uibModal, $cookies, ActiveUsers) {
 
         this.newRoom = {
             name: "New Room"
@@ -18,11 +18,12 @@
             console.log('Username set to '+this.username);
             $cookies.put('blocChatCurrentUser', this.username);
             console.log('blocChatCurrentUser cookie successfully set to '+$cookies.get('blocChatCurrentUser'));
+            ActiveUsers.login(this.username);
             $uibModalInstance.close();
         }
     }
 
     angular
         .module('blocChat')
-        .controller('ModalCtrl', ['Room', '$uibModalInstance', '$uibModal', '$cookies', ModalCtrl]);
+        .controller('ModalCtrl', ['Room', '$uibModalInstance', '$uibModal', '$cookies', 'ActiveUsers', ModalCtrl]);
 })();

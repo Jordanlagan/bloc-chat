@@ -1,5 +1,5 @@
 (function() {
-    function BlocChatCookies($cookies, $uibModal) {
+    function BlocChatCookies($cookies, $uibModal, ActiveUsers) {
         var currentUser = $cookies.get('blocChatCurrentUser');
         if (!currentUser || currentUser === '') {
             $uibModal.open({
@@ -12,9 +12,12 @@
                 keyboard: false
             });
         }
+        else {
+            ActiveUsers.login(currentUser);
+        }
     }
 
     angular
         .module('blocChat')
-        .run(['$cookies', '$uibModal', BlocChatCookies]);
+        .run(['$cookies', '$uibModal', 'ActiveUsers', BlocChatCookies]);
 })();

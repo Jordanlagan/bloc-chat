@@ -1,5 +1,5 @@
 (function() {
-    function HomeCtrl(Room, Message, $uibModal, $cookies, Username) {
+    function HomeCtrl(Room, Message, $uibModal, $cookies, Username, ActiveUsers) {
 
         this.rooms = Room.all;
 
@@ -10,6 +10,10 @@
         this.activeRoom = Room.activeRoom;
 
         this.message = "";
+
+        this.activeUsers = ActiveUsers.activeUsers;
+
+        this.logout = ActiveUsers.logout;
 
         this.addRoom = function() {
             $uibModal.open({
@@ -27,7 +31,17 @@
         }
 
         this.changeUser = function(name) {
-            this.username = name;
+            $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/templates/setUserNameModal.html',
+                size: 'sm',
+                controller: 'ModalCtrl as modal',
+                backdrop: 'static',
+                keyboard: false
+            });
+
+            ActiveUsers.logout(name)
         }
 
         this.sendMessage = function(message) {
@@ -44,5 +58,5 @@
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', 'Message', '$uibModal', '$cookies', 'Username', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', '$uibModal', '$cookies', 'Username', 'ActiveUsers', HomeCtrl]);
 })();
