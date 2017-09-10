@@ -15,6 +15,10 @@
 
         this.logout = ActiveUsers.logout;
 
+        this.userKey = function() {
+            return ActiveUsers.getUserKey();
+        };
+
         this.addRoom = function() {
             $uibModal.open({
               ariaLabelledBy: 'modal-title',
@@ -30,7 +34,7 @@
             this.messages = Message.getByRoomId(this.activeRoom.$id)
         }
 
-        this.changeUser = function(name) {
+        this.changeUser = function() {
             $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
@@ -41,7 +45,7 @@
                 keyboard: false
             });
 
-            ActiveUsers.logout(name)
+            ActiveUsers.logout(this.username, this.userKey());
         }
 
         this.sendMessage = function(message) {
