@@ -57,6 +57,7 @@
                 username: Username.update()
             };
             Message.send(newMessage);
+            this.message = "";
         }
     }
 
